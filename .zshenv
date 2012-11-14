@@ -19,3 +19,6 @@ eval "$(phpenv init - zsh)"
 
 # php-build
 export PATH=$PATH:$HOME/.php-build/bin
+
+# flex 
+export PATH=$PATH:$HOME/flex_sdk_4.6/bin
