@@ -29,3 +29,9 @@ fi
 if [[ -d $HOME/flex_sdk_4.6/ ]]; then
 	export PATH=$PATH:$HOME/flex_sdk_4.6/bin
 fi
+
+
+### brew autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
