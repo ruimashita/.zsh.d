@@ -14,11 +14,18 @@ fi
 
 
 # phpenv
-export PATH=$HOME/.phpenv/bin:$PATH
-eval "$(phpenv init - zsh)"
+if [[ -d $HOME/.phpenv/ ]]; then
+	export PATH=$HOME/.phpenv/bin:$PATH;
+	eval "$(phpenv init - zsh)";
+fi
 
 # php-build
-export PATH=$PATH:$HOME/.php-build/bin
+if [[ -d $HOME/.php-build/ ]]; then
+	export PATH=$PATH:$HOME/.php-build/bin
+fi
+
 
 # flex 
-export PATH=$PATH:$HOME/flex_sdk_4.6/bin
+if [[ -d $HOME/flex_sdk_4.6/ ]]; then
+	export PATH=$PATH:$HOME/flex_sdk_4.6/bin
+fi
