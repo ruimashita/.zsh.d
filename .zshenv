@@ -11,8 +11,6 @@ if [[ -e $HOME/nvm/nvm.sh ]]; then
 fi
 
 
-
-
 # phpenv
 if [ -d $HOME/.phpenv/ ]; then
 	export PATH=$HOME/.phpenv/bin:$PATH;
@@ -39,7 +37,20 @@ if [ -d /usr/local/flex_sdk ]; then
 fi
 
 
-### brew autojump
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
+### OS setting
+
+# for linux
+if [ $OSTYPE = 'linux-gnu' ]; then
+
 fi
+
+# for mac
+if [ $OSTYPE = 'darwin12.2.1' ]; then
+
+ ### brew autojump
+	if [ -f `brew --prefix`/etc/autojump ]; then
+		. `brew --prefix`/etc/autojump
+	fi
+
+fi
+
