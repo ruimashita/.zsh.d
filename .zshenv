@@ -47,7 +47,9 @@ fi
 # for mac
 if [ $OSTYPE = 'darwin12.2.1' ]; then
 
- ### brew autojump
+	alias gitk='gitk 2>/dev/null'
+	
+### brew autojump
 	if [ -f `brew --prefix`/etc/autojump ]; then
 		. `brew --prefix`/etc/autojump
 	fi
