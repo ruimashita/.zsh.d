@@ -11,8 +11,6 @@ if [[ -e $HOME/nvm/nvm.sh ]]; then
 fi
 
 
-
-
 # phpenv
 if [ -d $HOME/.phpenv/ ]; then
 	export PATH=$HOME/.phpenv/bin:$PATH;
@@ -36,4 +34,18 @@ fi
 
 if [ -d /usr/local/flex_sdk ]; then
 	export PATH=$PATH:$HOME/flex_sdk_4.6/bin
+fi
+
+
+### OS setting
+
+# for linux
+if [ $OSTYPE = 'linux-gnu' ]; then
+
+fi
+
+
+# for mac
+if [ $OSTYPE = 'darwin12.2.1' ]; then
+
 fi
