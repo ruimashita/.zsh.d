@@ -49,10 +49,13 @@ if [ $OSTYPE = 'darwin12.2.1' ]; then
 
 	alias gitk='gitk 2>/dev/null'
 	
-### brew autojump
+	# brew autojump
 	if [ -f `brew --prefix`/etc/autojump ]; then
 		. `brew --prefix`/etc/autojump
 	fi
+
+	# brew path
+	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 
