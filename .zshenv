@@ -14,18 +14,26 @@ fi
 
 
 # phpenv
-if [[ -d $HOME/.phpenv/ ]]; then
+if [ -d $HOME/.phpenv/ ]; then
 	export PATH=$HOME/.phpenv/bin:$PATH;
 	eval "$(phpenv init - zsh)";
 fi
 
 # php-build
-if [[ -d $HOME/.php-build/ ]]; then
+if [ -d $HOME/.php-build/ ]; then
 	export PATH=$PATH:$HOME/.php-build/bin
 fi
 
 
 # flex 
-if [[ -d $HOME/flex_sdk_4.6/ ]]; then
+if [ ! -d /usr/local/flex_sdk/ ]; then
+
+	if [ -d $HOME/flex_sdk_4.6/ ]; then
+		echo "sudo ln -s $HOME/flex_sdk_4.6 /usr/local/flex_sdk"
+		sudo ln -s $HOME/flex_sdk_4.6 /usr/local/flex_sdk
+	fi
+fi
+
+if [ -d /usr/local/flex_sdk ]; then
 	export PATH=$PATH:$HOME/flex_sdk_4.6/bin
 fi
