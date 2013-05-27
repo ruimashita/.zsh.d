@@ -42,6 +42,15 @@ source $ZSH/oh-my-zsh.sh
 # my setting
 ############################################################################################################################
 
+## ゴミ箱
+if [ $OSTYPE = 'linux-gnu' ]; then
+	alias rm='trash-put'
+fi
+if [ $OSTYPE = 'darwin12.2.1' ]; then
+	alias rm='trash'
+fi
+
+alias git='nocorrect git'
 
 ## 区切りワード
 WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>' 
@@ -75,6 +84,8 @@ setopt auto_pushd
 # # command correct edition before each completion attempt
 # #
 # setopt correct
+
+
 
 # compacked complete list display
 #
@@ -121,13 +132,3 @@ bindkey '^xp' predict-off
 zstyle ':predict' verbose true
 
 
-##### vcss
-# autoload -Uz vcs_info
-# zstyle ':vcs_info:*' formats '(%s)-[%b]'
-# zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-# precmd () {
-#     psvar=()
-#     LANG=en_US.UTF-8 vcs_info
-#     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-# }
-# RPROMPT="%1(v|%F{green}%1v%f|)"
