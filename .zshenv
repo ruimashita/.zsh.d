@@ -45,14 +45,7 @@ if [ $OSTYPE = 'linux-gnu' ]; then
 fi
 
 # for mac
-if [ $OSTYPE = 'darwin12.2.1' ]; then
-
-	alias gitk='gitk 2>/dev/null'
-	
-	# brew autojump
-	if [ -f `brew --prefix`/etc/autojump ]; then
-		. `brew --prefix`/etc/autojump
-	fi
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
 	# brew path
 	export PATH=/usr/local/bin:/usr/local/sbin:$PATH

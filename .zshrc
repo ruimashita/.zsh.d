@@ -46,9 +46,20 @@ source $ZSH/oh-my-zsh.sh
 if [ $OSTYPE = 'linux-gnu' ]; then
 	alias rm='trash-put'
 fi
-if [ $OSTYPE = 'darwin12.2.1' ]; then
+
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+
 	alias rm='trash'
+
+	alias gitk='gitk 2>/dev/null'
+	
+	# brew autojump
+	if [ -f `brew --prefix`/etc/autojump ]; then
+		. `brew --prefix`/etc/autojump
+	fi
+
 fi
+
 
 alias git='nocorrect git'
 
@@ -109,6 +120,12 @@ bindkey -e
 
 ## Completion configuration
 #
+
+# brew completions
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+	fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
 autoload -U compinit
 compinit
 
