@@ -6,8 +6,8 @@ fi
 
 
 ##### javascript #################################################################
-if [[ -e $HOME/nvm/nvm.sh ]]; then
-	source $HOME/nvm/nvm.sh;
+if [[ -e $HOME/.nvm/nvm.sh ]]; then
+	source $HOME/.nvm/nvm.sh;
 fi
 
 
