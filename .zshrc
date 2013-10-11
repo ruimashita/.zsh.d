@@ -5,9 +5,9 @@ ZSH=$HOME/.zsh.d/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gianu"
+ZSH_THEME="robbyrussell"
 
-# Example aliases
+# Example aliases 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -29,7 +29,7 @@ ZSH_THEME="gianu"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow ruby rails rvm python autojump bundler)
+plugins=(git git-flow ruby rvm  python autojump bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,6 +125,8 @@ bindkey -e
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	fpath=(/usr/local/share/zsh-completions $fpath)
 fi
+
+fpath=(~/.zsh.d/completions $fpath)
 
 autoload -U compinit
 compinit

@@ -32,8 +32,20 @@ if [ ! -d /usr/local/flex_sdk/ ]; then
 	fi
 fi
 
-if [ -d /usr/local/flex_sdk ]; then
-	export PATH=$PATH:$HOME/flex_sdk_4.6/bin
+if [ -d $HOME/local/flex_sdk ]; then
+	export PATH=$PATH:$HOME/local/flex_sdk_4.6/bin
+fi
+
+
+# android-studio 
+if [ -d $HOME/local/android-studio/ ]; then
+	export PATH=$PATH:$HOME/local/android-studio/bin
+	export ANDROID_HOME=$HOME/local/android-studio/sdk
+fi
+
+# xlsx2csv
+if [ -d $HOME/local/xlsx2csv ]; then
+	export PATH=$PATH:$HOME/local/xlsx2csv
 fi
 
 
