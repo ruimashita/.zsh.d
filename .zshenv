@@ -1,7 +1,12 @@
 
 ###### ruby #################################
-if [[ -e $HOME/.rvm/scripts/rvm ]]; then
-    source $HOME/.rvm/scripts/rvm;
+# if [[ -e $HOME/.rvm/scripts/rvm ]]; then
+#     source $HOME/.rvm/scripts/rvm;
+# fi
+
+if [ -d $HOME/.rbenv/ ]; then
+	export PATH=$PATH:$HOME/.rbenv//bin
+	eval "$(rbenv init - zsh)"
 fi
 
 
