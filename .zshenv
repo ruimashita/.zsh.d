@@ -56,8 +56,16 @@ fi
 # android-studio 
 if [ -d $HOME/local/android-studio/ ]; then
 	export PATH=$PATH:$HOME/local/android-studio/bin
-	export ANDROID_HOME=$HOME/local/android-studio/sdk
+	export ANDROID_HOME=$HOME/local/android-sdk-linux
 fi
+
+
+# android
+if [ -d $HOME/local/android-sdk-linux/ ]; then
+
+	export PATH=$PATH:$HOME/local/android-sdk-linux/platform-tools
+fi
+
 
 # xlsx2csv
 if [ -d $HOME/local/xlsx2csv ]; then
