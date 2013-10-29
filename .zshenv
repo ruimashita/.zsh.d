@@ -15,6 +15,17 @@ if [[ -e $HOME/.nvm/nvm.sh ]]; then
 	source $HOME/.nvm/nvm.sh;
 fi
 
+##### python #################################################################
+export WORKON_HOME=$HOME/.virtualenvs
+if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+	source /usr/local/bin/virtualenvwrapper.sh
+
+	## source ~/.virtualenvs/ranbu/bin/activate
+fi
+
+
+
+
 
 # phpenv
 if [ -d $HOME/.phpenv/ ]; then
