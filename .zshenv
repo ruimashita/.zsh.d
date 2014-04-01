@@ -84,7 +84,9 @@ fi
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
 	# brew path
-	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+	export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:$PATH
 
+	# brew php
+	export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 fi
 
