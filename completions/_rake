@@ -1,14 +1,17 @@
-# https://github.com/ToQoz/dotfiles/blob/master/.zsh/site-functions/_rake
+# http://qiita.com/ToQoz/items/848abdf90a0f40e70ce0
+
+# bundle exec rake の場合は動かない。。。
+
 _cachefile_updated_at() {
-  echo $(stat .rake_tasks -c%Y)
+  echo $(stat -f%m .rake_tasks)
 }
 
 _rakefile_updated_at() {
-  echo $(stat Rakefile -c%Y)
+  echo $(stat -f%m Rakefile)
 }
 
 _gemfile_updated_at() {
-  echo $(stat Gemfile -c%Y)
+  echo $(stat -f%m Gemfile)
 }
 
 _generate_cachefile() {
