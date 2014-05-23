@@ -1,3 +1,4 @@
+echo 'load .zshenv'
 
 ###### ruby #################################
 # if [[ -e $HOME/.rvm/scripts/rvm ]]; then
@@ -9,6 +10,8 @@ if [ -d $HOME/.rbenv/ ]; then
 	eval "$(rbenv init - zsh)"
 fi
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 ##### javascript #################################################################
 if [[ -e $HOME/.nvm/nvm.sh ]]; then
@@ -22,9 +25,6 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
 
 	## source ~/.virtualenvs/ranbu/bin/activate
 fi
-
-
-
 
 
 # phpenv
@@ -83,10 +83,15 @@ fi
 # for mac
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
+	# sbin path (brewのzshは/etc/pathsを見に行かないので)
+	export PATH=/usr/sbin:/sbin:$PATH
+
 	# brew path
-	export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:$PATH
+	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 	# brew php
 	export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+
+
 fi
 

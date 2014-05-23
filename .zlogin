@@ -1,0 +1,2 @@
+echo 'load .zlogin'
+
