@@ -27,6 +27,12 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
 fi
 
 
+##### php  #################################################################
+# composer
+if [ -d $HOME/.composer/ ]; then
+	export PATH=$HOME/.composer/vendor/bin:$PATH;
+fi
+
 # phpenv
 if [ -d $HOME/.phpenv/ ]; then
 	export PATH=$HOME/.phpenv/bin:$PATH;
@@ -90,8 +96,9 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 	# brew php
-	export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+    export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
 
-
+    # docker
+    export DOCKER_HOST=tcp://localhost:4243
 fi
 
