@@ -72,6 +72,12 @@ if [ -d $HOME/local/xlsx2csv ]; then
 	export PATH=$PATH:$HOME/local/xlsx2csv
 fi
 
+# packer
+if [ -d $HOME/local/packer ]; then
+	export PATH=$PATH:$HOME/local/packer/bin
+fi
+
+
 
 ### OS setting
 
