@@ -102,8 +102,8 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 	# brew php
-    export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
-
+    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+    
     # docker
     export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
 fi
