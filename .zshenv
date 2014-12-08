@@ -1,5 +1,9 @@
 echo 'load .zshenv'
 
+if [ -d $HOME/local/bin/ ]; then
+    export PATH=$HOME/local/bin:$PATH
+fi
+
 ###### ruby #################################
 # if [[ -e $HOME/.rvm/scripts/rvm ]]; then
 #     source $HOME/.rvm/scripts/rvm;
