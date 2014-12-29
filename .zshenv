@@ -39,8 +39,9 @@ fi
 
 # phpenv
 if [ -d $HOME/.phpenv/ ]; then
-	export PATH=$HOME/.phpenv/bin:$PATH;
-	eval "$(phpenv init - zsh)";
+    # rbenvのパスを優先させるため、この順序
+    export PATH=$PATH:$HOME/.phpenv/bin;
+    eval "$(phpenv init - zsh)";
 fi
 
 # php-build
@@ -86,7 +87,6 @@ fi
 if [ -d $HOME/local/packer ]; then
 	export PATH=$PATH:$HOME/local/packer/bin
 fi
-
 
 
 ### OS setting
