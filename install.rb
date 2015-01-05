@@ -7,7 +7,7 @@ command = 'cd ' + thisDir
 puts command
 system(command)
 
-%w{.zshrc .zshenv .zlogin}.each do |file|
+%w{.zshrc .zshenv .zlogin .zprofile}.each do |file|
 	command = "ln -s  #{thisDir}/#{file} #{homeDir}"
 	puts command
 	system(command)
