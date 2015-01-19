@@ -37,17 +37,17 @@ if [ -d $HOME/.composer/ ]; then
 	export PATH=$HOME/.composer/vendor/bin:$PATH;
 fi
 
-# phpenv
-if [ -d $HOME/.phpenv/ ]; then
-    # rbenvのパスを優先させるため、この順序
-    export PATH=$PATH:$HOME/.phpenv/bin;
-    eval "$(phpenv init - zsh)";
-fi
+# # phpenv
+# if [ -d $HOME/.phpenv/ ]; then
+#     # rbenvのパスを優先させるため、この順序
+#     export PATH=$PATH:$HOME/.phpenv/bin;
+#     eval "$(phpenv init - zsh)";
+# fi
 
-# php-build
-if [ -d $HOME/.php-build/ ]; then
-	export PATH=$PATH:$HOME/.php-build/bin
-fi
+# # php-build
+# if [ -d $HOME/.php-build/ ]; then
+# 	export PATH=$PATH:$HOME/.php-build/bin
+# fi
 
 
 # flex 
