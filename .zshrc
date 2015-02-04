@@ -9,7 +9,7 @@ ZSH=$HOME/.zsh.d/oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
 
-# Example aliases 
+# Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -46,7 +46,9 @@ source $ZSH/oh-my-zsh.sh
 
 ## ゴミ箱
 if [ $OSTYPE = 'linux-gnu' ]; then
-	alias rm='trash-put'
+    if [[ -e /usr/bin/trash-put ]]; then
+	    alias rm='trash-put'
+    fi
 fi
 
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
@@ -54,7 +56,7 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	alias rm='trash'
 
 	alias gitk='gitk 2>/dev/null'
-	
+
 	# brew autojump
 	if [ -f `brew --prefix`/etc/autojump ]; then
 		. `brew --prefix`/etc/autojump
@@ -66,7 +68,7 @@ fi
 alias git='nocorrect git'
 
 ## 区切りワード
-WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>' 
+WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>'
 
 ## REf: http://journal.mycom.co.jp/column/zsh/010/index.html
 
@@ -151,5 +153,3 @@ bindkey '^xp' predict-off
 
 #予測入力のon/offが切り替わった時に表示する
 zstyle ':predict' verbose true
-
-
