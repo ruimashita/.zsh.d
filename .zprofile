@@ -1,1 +1,1 @@
-echo 'load .zprofile'
+# echo 'load .zprofile'

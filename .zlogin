@@ -1,2 +1,2 @@
-echo 'load .zlogin'
+# echo 'load .zlogin'
 
