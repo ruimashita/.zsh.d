@@ -19,13 +19,13 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ##### javascript #################################################################
-if [[ -e $HOME/.nvm/nvm.sh ]]; then
+if [ -e $HOME/.nvm/nvm.sh ]; then
 	source $HOME/.nvm/nvm.sh;
 fi
 
 ##### python #################################################################
 export WORKON_HOME=$HOME/.virtualenvs
-if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 
 	## source ~/.virtualenvs/ranbu/bin/activate

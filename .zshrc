@@ -7,7 +7,13 @@ ZSH=$HOME/.zsh.d/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+if [ $HOST = 'OZU' ]; then
+    ZSH_THEME="candy"
+elif  [ $HOST = 'NARUSE' ]; then
+    ZSH_THEME="candy"
+else
+    ZSH_THEME="af-magic"
+fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
