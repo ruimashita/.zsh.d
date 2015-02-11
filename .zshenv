@@ -1,5 +1,4 @@
-echo 'load .zshenv'
-echo $OSTYPE
+# echo 'load .zshenv'
 
 if [ -d $HOME/local/bin/ ]; then
     export PATH=$HOME/local/bin:$PATH
