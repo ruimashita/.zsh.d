@@ -9,7 +9,7 @@ ZSH=$HOME/.zsh.d/oh-my-zsh
 # time that oh-my-zsh is loaded.
 if [ $HOST = 'OZU' ]; then
     ZSH_THEME="candy"
-elif  [ $HOST = 'NARUSE' ]; then
+elif  [ $HOST = 'NARUSE.local' ]; then
     ZSH_THEME="candy"
 else
     ZSH_THEME="af-magic"
