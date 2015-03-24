@@ -17,6 +17,19 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+
+##### golang #################################################################
+if [ -e $HOME/go ]; then
+	export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$PATH
+fi
+
+if [ -e /usr/local/go ]; then
+	export GOROOT=/usr/local/go
+    export PATH=$GOROOT/bin:$PATH
+fi
+
+
 ##### javascript #################################################################
 if [ -e $HOME/.nvm/nvm.sh ]; then
 	source $HOME/.nvm/nvm.sh;
