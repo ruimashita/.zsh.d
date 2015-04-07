@@ -130,5 +130,8 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
     # chefdk
     eval "$(chef shell-init zsh)"
+
+    # byobu
+    export BYOBU_PREFIX=$(brew --prefix)
 fi
 
