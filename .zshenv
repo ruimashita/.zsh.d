@@ -83,6 +83,12 @@ if [ -d $HOME/local/android-studio/ ]; then
 	export ANDROID_HOME=$HOME/local/android-sdk-linux
 fi
 
+# go_appengine
+if [ -d $HOME/local/go_appengine/ ]; then
+	export PATH=$PATH:$HOME/local/go_appengine
+fi
+
+
 
 # android
 if [ -d $HOME/local/android-sdk-linux/ ]; then
