@@ -133,5 +133,9 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
+
+    ## autojump
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 fi
 
