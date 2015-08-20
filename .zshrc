@@ -135,7 +135,8 @@ bindkey -e
 
 # brew completions
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
-	fpath=(/usr/local/share/zsh-completions $fpath)
+    fpath=(/usr/local/share/zsh-completions $fpath)
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
 
 fpath=(~/.zsh.d/completions $fpath)
