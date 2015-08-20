@@ -129,15 +129,21 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
     # docker
-    export DOCKER_HOST=tcp://192.168.59.103:2376
-    export DOCKER_CERT_PATH=/Users/takuya/.boot2docker/certs/boot2docker-vm
-    export DOCKER_TLS_VERIFY=1
-    # eval "$(boot2docker shellinit)"
+    export DOCKER_TLS_VERIFY="1"
+    export DOCKER_HOST="tcp://192.168.99.100:2376"
+    export DOCKER_CERT_PATH="/Users/takuya/.docker/machine/machines/docker"
+    export DOCKER_MACHINE_NAME="docker"
+    # Run this command to configure your shell:
+    # eval "$(docker-machine env docker)"    
 
     # chefdk
     eval "$(chef shell-init zsh)"
 
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
+
+    ## autojump
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 fi
 

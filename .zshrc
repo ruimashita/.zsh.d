@@ -11,6 +11,8 @@ if [ $HOST = 'OZU' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE.local' ]; then
     ZSH_THEME="candy"
+elif  [ $HOST = '61.206.112.251.static.zoot.jp' ]; then
+    ZSH_THEME="candy"
 else
     ZSH_THEME="af-magic"
 fi
@@ -133,7 +135,8 @@ bindkey -e
 
 # brew completions
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
-	fpath=(/usr/local/share/zsh-completions $fpath)
+    fpath=(/usr/local/share/zsh-completions $fpath)
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
 
 fpath=(~/.zsh.d/completions $fpath)
