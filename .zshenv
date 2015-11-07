@@ -136,9 +136,6 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # Run this command to configure your shell:
     # eval "$(docker-machine env docker)"    
 
-    # chefdk
-    eval "$(chef shell-init zsh)"
-
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
 
