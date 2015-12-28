@@ -128,10 +128,13 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	# brew php
     export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
+    # docker-machine
+    export MACHINE_STORAGE_PATH="/Volumes/Transcend/.docker/machine"
+
     # docker
     export DOCKER_TLS_VERIFY="1"
-    export DOCKER_HOST="tcp://192.168.99.100:2376"
-    export DOCKER_CERT_PATH="/Users/takuya/.docker/machine/machines/docker"
+    export DOCKER_HOST="tcp://192.168.99.101:2376"
+    export DOCKER_CERT_PATH="/Volumes/Transcend/.docker/machine/machines/docker"
     export DOCKER_MACHINE_NAME="docker"
     # Run this command to configure your shell:
     # eval "$(docker-machine env docker)"    
