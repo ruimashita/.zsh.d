@@ -9,6 +9,8 @@ ZSH=$HOME/.zsh.d/oh-my-zsh
 # time that oh-my-zsh is loaded.
 if [ $HOST = 'OZU' ]; then
     ZSH_THEME="candy"
+elif  [ $HOST = 'naruse.router.asus.com' ]; then
+    ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE.local' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = '61.206.112.251.static.zoot.jp' ]; then
