@@ -41,7 +41,7 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git-flow ruby python autojump)
+plugins=(git-flow autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,9 +68,9 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	alias gitk='gitk 2>/dev/null'
 
 	# brew autojump
-	if [ -f `brew --prefix`/etc/autojump ]; then
-		. `brew --prefix`/etc/autojump
-	fi
+	# if [ -f `brew --prefix`/etc/autojump ]; then
+	# 	. `brew --prefix`/etc/autojump
+	# fi
 
 fi
 
@@ -164,3 +164,5 @@ bindkey '^xp' predict-off
 
 #予測入力のon/offが切り替わった時に表示する
 zstyle ':predict' verbose true
+
+

@@ -134,10 +134,11 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # docker
     export DOCKER_TLS_VERIFY="1"
     export DOCKER_HOST="tcp://192.168.99.100:2376"
-    export DOCKER_CERT_PATH="/Volumes/Transcend/.docker/machine/machines/docker"
-    export DOCKER_MACHINE_NAME="docker"
+    export DOCKER_CERT_PATH="/Volumes/Transcend/.docker/machine/machines/default"
+    export DOCKER_MACHINE_NAME="default"
     # Run this command to configure your shell:
-    # eval "$(docker-machine env docker)"
+    # eval $(docker-machine env)
+    # "/Users/takuya/.docker/machine/machines/docker"
 
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
