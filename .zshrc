@@ -17,6 +17,8 @@ elif  [ $HOST = '61.206.112.251.static.zoot.jp' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE.router.asus.com' ]; then
     ZSH_THEME="candy"
+elif  [ $HOST = 'NARUSE' ]; then
+    ZSH_THEME="candy"
 else
     ZSH_THEME="junkfood"
 fi
