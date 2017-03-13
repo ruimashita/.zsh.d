@@ -1,5 +1,50 @@
 # echo 'load .zshenv'
 
+### OS setting
+
+# for linux
+if [ $OSTYPE = 'linux-gnu' ]; then
+
+
+fi
+
+# for mac
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+    # disable cat /etc/zprofile
+    setopt no_global_rcs
+
+	# sbin path (brewのzshは/etc/pathsを見に行かないので)
+	export PATH=/usr/sbin:/sbin:$PATH
+
+	# brew path
+	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+	# brew php
+    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+    # docker-machine
+    export MACHINE_STORAGE_PATH="/Volumes/Transcend/.docker/machine"
+
+    # docker
+    # export DOCKER_TLS_VERIFY="1"
+    # export DOCKER_HOST="tcp://192.168.99.100:2376"
+    # export DOCKER_CERT_PATH="/Volumes/Transcend/.docker/machine/machines/default"
+    # export DOCKER_MACHINE_NAME="default"
+    # Run this command to configure your shell:
+    # eval $(docker-machine env)
+    # "/Users/takuya/.docker/machine/machines/docker"
+
+    # byobu
+    export BYOBU_PREFIX=$(brew --prefix)
+
+    ## autojump
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+fi
+
+
+### path setting
+
 if [ -d $HOME/local/bin/ ]; then
     export PATH=$HOME/local/bin:$PATH
 fi
@@ -41,6 +86,11 @@ if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 
 	## source ~/.virtualenvs/ranbu/bin/activate
+fi
+
+# pyenv
+if [ -d $HOME/.pyenv/ ]; then
+    export PATH=$HOME/.pyenv/shims:$PATH
 fi
 
 
@@ -105,46 +155,5 @@ fi
 # packer
 if [ -d $HOME/local/packer ]; then
 	export PATH=$PATH:$HOME/local/packer/bin
-fi
-
-
-### OS setting
-
-# for linux
-if [ $OSTYPE = 'linux-gnu' ]; then
-
-
-fi
-
-# for mac
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
-
-	# sbin path (brewのzshは/etc/pathsを見に行かないので)
-	export PATH=/usr/sbin:/sbin:$PATH
-
-	# brew path
-	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-	# brew php
-    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
-    # docker-machine
-    export MACHINE_STORAGE_PATH="/Volumes/Transcend/.docker/machine"
-
-    # docker
-    export DOCKER_TLS_VERIFY="1"
-    export DOCKER_HOST="tcp://192.168.99.100:2376"
-    export DOCKER_CERT_PATH="/Volumes/Transcend/.docker/machine/machines/default"
-    export DOCKER_MACHINE_NAME="default"
-    # Run this command to configure your shell:
-    # eval $(docker-machine env)
-    # "/Users/takuya/.docker/machine/machines/docker"
-
-    # byobu
-    export BYOBU_PREFIX=$(brew --prefix)
-
-    ## autojump
-    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 fi
 
