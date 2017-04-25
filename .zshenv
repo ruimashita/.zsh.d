@@ -91,6 +91,7 @@ fi
 # pyenv
 if [ -d $HOME/.pyenv/ ]; then
     export PATH=$HOME/.pyenv/shims:$PATH
+    eval "$(pyenv init -)"
 fi
 
 
