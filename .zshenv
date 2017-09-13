@@ -81,17 +81,12 @@ if [ -e $HOME/.nvm/nvm.sh ]; then
 fi
 
 ##### python #################################################################
-export WORKON_HOME=$HOME/.virtualenvs
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-	source /usr/local/bin/virtualenvwrapper.sh
-
-	## source ~/.virtualenvs/ranbu/bin/activate
-fi
-
-# pyenv
 if [ -d $HOME/.pyenv/ ]; then
-    export PATH=$HOME/.pyenv/shims:$PATH
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+    export PATH=$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 
