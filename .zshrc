@@ -85,6 +85,8 @@ alias git='nocorrect git'
 
 ## 区切りワード
 WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>'
+autoload -U select-word-style
+select-word-style bash
 
 ## REf: http://journal.mycom.co.jp/column/zsh/010/index.html
 
