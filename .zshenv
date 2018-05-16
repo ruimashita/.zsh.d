@@ -19,9 +19,6 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	# brew path
 	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-	# brew php
-    export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
     # docker-machine
     export MACHINE_STORAGE_PATH="/Volumes/Transcend/.docker/machine"
 
