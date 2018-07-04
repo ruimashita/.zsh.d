@@ -83,7 +83,7 @@ if [ -d $HOME/.pyenv/ ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     export PATH=$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    # eval "$(pyenv virtualenv-init -)"
 fi
 
 
