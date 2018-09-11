@@ -21,6 +21,8 @@ elif  [ $HOST = 'NARUSE' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'wakisaka-MBP' ]; then
     ZSH_THEME="candy"
+elif  [ $HOST = 'wakisaka-MacBook-Pro.local' ]; then
+    ZSH_THEME="candy"
 else
     ZSH_THEME="junkfood"
 fi
@@ -174,3 +176,56 @@ bindkey '^xp' predict-off
 zstyle ':predict' verbose true
 
 
+#====================================================================
+#
+# 
+#====================================================================
+
+# for mac
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+
+    ## autojump
+    if [ -z $AUTOJUMP_INITTED ]; then
+        echo "init autojump"
+        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+        expoert AUTOJUMP_INITTED=1
+    fi
+
+fi
+
+
+###### ruby #################################
+# if [[ -e $HOME/.rvm/scripts/rvm ]]; then
+#     source $HOME/.rvm/scripts/rvm;
+# fi
+
+if [ -d $HOME/.rbenv/ ]; then
+	export PATH=$PATH:$HOME/.rbenv/bin
+	eval "$(rbenv init - zsh)"
+fi
+
+
+
+##### python #################################################################
+if [ -d $HOME/.pyenv/ ]; then
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+    export PATH=$PYENV_ROOT/shims:$PATH
+
+    if [ -z $PYENV_INITTED ]; then
+        echo "pyenv init"
+        eval "$(pyenv init -)"
+        # eval "$(pyenv virtualenv-init -)"
+        expoert PYENV_INITTED=1
+    fi
+
+fi
+
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc'; fi

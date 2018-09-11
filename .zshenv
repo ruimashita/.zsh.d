@@ -33,10 +33,6 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
-
-    ## autojump
-    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 fi
 
 
@@ -46,15 +42,6 @@ if [ -d $HOME/local/bin/ ]; then
     export PATH=$HOME/local/bin:$PATH
 fi
 
-###### ruby #################################
-# if [[ -e $HOME/.rvm/scripts/rvm ]]; then
-#     source $HOME/.rvm/scripts/rvm;
-# fi
-
-if [ -d $HOME/.rbenv/ ]; then
-	export PATH=$PATH:$HOME/.rbenv/bin
-	eval "$(rbenv init - zsh)"
-fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -75,15 +62,6 @@ fi
 ##### javascript #################################################################
 if [ -e $HOME/.nvm/nvm.sh ]; then
 	source $HOME/.nvm/nvm.sh;
-fi
-
-##### python #################################################################
-if [ -d $HOME/.pyenv/ ]; then
-    export PYENV_ROOT=$HOME/.pyenv
-    export PATH=$PYENV_ROOT/bin:$PATH
-    export PATH=$PYENV_ROOT/shims:$PATH
-    eval "$(pyenv init -)"
-    # eval "$(pyenv virtualenv-init -)"
 fi
 
 
@@ -151,8 +129,3 @@ if [ -d $HOME/local/packer ]; then
 fi
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc'; fi
