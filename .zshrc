@@ -188,7 +188,7 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     if [ -z $AUTOJUMP_INITTED ]; then
         echo "init autojump"
         [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-        expoert AUTOJUMP_INITTED=1
+        export AUTOJUMP_INITTED=1
     fi
 
 fi
