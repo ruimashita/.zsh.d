@@ -216,7 +216,7 @@ if [ -d $HOME/.pyenv/ ]; then
         echo "pyenv init"
         eval "$(pyenv init -)"
         # eval "$(pyenv virtualenv-init -)"
-        expoert PYENV_INITTED=1
+        export PYENV_INITTED=1
     fi
 
 fi
