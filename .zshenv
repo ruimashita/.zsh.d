@@ -1,5 +1,11 @@
 # echo 'load .zshenv'
 
+if [ ! -z $LOCAL_ZSHENV_LOADED ]; then
+    echo "load .zshenv again"
+    return
+fi
+
+
 ### OS setting
 
 # for linux
@@ -129,3 +135,4 @@ if [ -d $HOME/local/packer ]; then
 fi
 
 
+export LOCAL_ZSHENV_LOADED=1
