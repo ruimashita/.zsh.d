@@ -220,12 +220,3 @@ if [ -d $HOME/.pyenv/ ]; then
     fi
 
 fi
-
-
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/wakisakatakuya/local/google-cloud-sdk/completion.zsh.inc'; fi
