@@ -19,14 +19,8 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # disable cat /etc/zprofile
     setopt no_global_rcs
 
-	# sbin path (brewのzshは/etc/pathsを見に行かないので)
-	export PATH=/usr/sbin:/sbin:$PATH
-
-	# brew path
-	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-    # docker-machine
-    export MACHINE_STORAGE_PATH="/Volumes/Transcend/.docker/machine"
+    # for brew path
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
     # docker
     # export DOCKER_TLS_VERIFY="1"
