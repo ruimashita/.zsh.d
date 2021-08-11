@@ -13,15 +13,11 @@ elif  [ $HOST = 'naruse.router.asus.com' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE.local' ]; then
     ZSH_THEME="candy"
-elif  [ $HOST = '61.206.112.251.static.zoot.jp' ]; then
-    ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE.router.asus.com' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'NARUSE' ]; then
     ZSH_THEME="candy"
-elif  [ $HOST = 'wakisaka-MBP' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'wakisaka-MacBook-Pro.local' ]; then
+elif  [ $HOST = 'LM-MacBook-wakisaka.local' ]; then
     ZSH_THEME="candy"
 else
     ZSH_THEME="junkfood"
