@@ -86,6 +86,16 @@ WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>'
 autoload -U select-word-style
 select-word-style bash
 
+## History settings
+
+# share history with another zsh
+setopt share_history
+
+# If a new command line being added to the history list duplicates an older one, the older command is removed from the list.
+setopt hist_ignore_all_dups
+
+
+
 ## REf: http://journal.mycom.co.jp/column/zsh/010/index.html
 
 # users generic .zshrc file for zsh(1)
