@@ -130,4 +130,7 @@ if [ -d $HOME/local/packer ]; then
 fi
 
 
+# ripgrep
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 export LOCAL_ZSHENV_LOADED=1
