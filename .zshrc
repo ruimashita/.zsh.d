@@ -76,9 +76,6 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
 fi
 
-#  _git is correct? [n,y,a,e]: って聞かれないようにする
-alias git='nocorrect git'
-
 ## 区切りワード
 WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>'
 autoload -U select-word-style
