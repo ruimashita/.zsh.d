@@ -6,21 +6,24 @@ if [ ! -z $LOCAL_ZSHENV_LOADED ]; then
 fi
 
 
-### OS setting
+### Depending on OS
 
-# for linux
+# for Linux
 if [ $OSTYPE = 'linux-gnu' ]; then
 
 
 fi
 
-# for mac
+# for Mac
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
-    # disable cat /etc/zprofile
-    setopt no_global_rcs
 
-    # for brew path
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # disable cat /etc/zprofile
+    # setopt no_global_rcs
+    # 上をコメントアウトすると .zshenv で PATH がうまく設定できないはず。しかし、そもそも .zshenv でPATHを設定すべきではない。
+    # ref:
+    #   https://qiita.com/ko1nksm/items/febc5ceb4edb068a682a
+    #   https://kiririmode.hatenablog.jp/entry/20160214/1455375600
+
 
     # docker
     # export DOCKER_TLS_VERIFY="1"
@@ -31,8 +34,6 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # eval $(docker-machine env)
     # "/Users/takuya/.docker/machine/machines/docker"
 
-    # byobu
-    export BYOBU_PREFIX=$(brew --prefix)
 fi
 
 
