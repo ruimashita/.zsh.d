@@ -18,7 +18,7 @@ elif  [ $HOST = 'LM-MacBook-wakisaka.local' ]; then
 elif  [ $HOST = 'Wakisaka-Takuyas-Mac-mini-2024.local' ]; then
     ZSH_THEME="candy"
 else
-    ZSH_THEME="junkfood"
+    ZSH_THEME="ys"
 fi
 
 # Example aliases
