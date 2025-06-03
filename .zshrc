@@ -29,8 +29,9 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # byobu
     export BYOBU_PREFIX=$(brew --prefix)
 
-    # use gls from brew coreuitls
+    # use gls, dircolors from brew coreuitls
     alias ls='gls'
+    alias dircolors='gdircolors'
 
 fi
 
@@ -107,6 +108,11 @@ fi
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 	alias rm='trash'
 fi
+
+## set LS_COLORS by dircolors
+eval $(dircolors ~/.zsh.d/dircolors/src/dir_colors)
+
+
 
 ## 区切りワード
 WORDCHARS='-*?_.[]‾=&;!#$%^(){}<>'
