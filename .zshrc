@@ -16,18 +16,9 @@ fi
 
 # for Mac
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
+
     # for brew path
     eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    # autojump
-    if [ -z $AUTOJUMP_INITTED ]; then
-        echo "init autojump"
-        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-        export AUTOJUMP_INITTED=1
-    fi
-
-    # byobu
-    export BYOBU_PREFIX=$(brew --prefix)
 
     # use gls, dircolors from brew coreuitls
     alias ls='gls'
@@ -228,6 +219,15 @@ fi
 # for Mac
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
+    # autojump
+    if [ -z $AUTOJUMP_INITTED ]; then
+        echo "init autojump"
+        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+        export AUTOJUMP_INITTED=1
+    fi
+
+    # byobu
+    export BYOBU_PREFIX=$(brew --prefix)
 fi
 
 
