@@ -50,6 +50,8 @@ elif  [ $HOST = 'LM-MacBook-wakisaka.local' ]; then
     ZSH_THEME="candy"
 elif  [ $HOST = 'Wakisaka-Takuyas-Mac-mini-2024.local' ]; then
     ZSH_THEME="candy"
+elif  [ $HOST = 'Wakisaka-Takuyas-MacBook-Pro-13-inch-M1-2020.local' ]; then
+    ZSH_THEME="candy"
 else
     ZSH_THEME="ys"
 fi
