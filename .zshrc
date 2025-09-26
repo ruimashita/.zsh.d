@@ -259,3 +259,9 @@ if [ -d $HOME/.pyenv/ ]; then
     fi
 
 fi
+
+
+##### mise #################################################################
+if [[ -e /opt/homebrew/bin/mise ]]; then
+    eval "$(mise activate zsh)"
+fi
