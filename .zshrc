@@ -190,23 +190,15 @@ bindkey -e
 
 
 #====================================================================
-##  先方予測機能
-## http://pub.cozmixng.org/~hiki/cis/?zsh
+# zsh-autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions
 #====================================================================
-autoload -U predict-on
-#C-xp 予測オン
-#C-xC-p 予測オフ
-predict-on
-zle -N predict-on
-zle -N predict-off
-bindkey '^x^p' predict-on
-bindkey '^xp' predict-off
-#コマンドラインを編集中は予測入力をしない
-#zstyle ':predict' toggle true
+# TODO: for Linux setting
 
-#予測入力のon/offが切り替わった時に表示する
-zstyle ':predict' verbose true
-
+# for Mac
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 #====================================================================
 # Depending on OS
