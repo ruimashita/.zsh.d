@@ -27,6 +27,21 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 fi
 
 
+# Completion configuration
+
+# To avoid redundant cache issue for oh-my-zsh and zsh-completions, setup zsh-completions and compinit before source oh-my-zsh.
+# Ref: https://github.com/zsh-users/zsh-completions
+
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+    # brew completions
+    fpath=(/opt/homebrew/share/zsh-completions $fpath)
+fi
+
+fpath=(~/.zsh.d/completions $fpath)
+
+autoload -U compinit
+compinit
+
 
 ############################################################################################################################
 # oh-my-zsh setting
@@ -172,21 +187,6 @@ setopt nolistbeep
 # to end of it)
 #
 bindkey -e
-
-
-## Completion configuration
-#
-
-
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
-    # brew completions
-    fpath=(/opt/homebrew/share/zsh-completions $fpath)
-fi
-
-fpath=(~/.zsh.d/completions $fpath)
-
-autoload -U compinit
-compinit
 
 
 #====================================================================
