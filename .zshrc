@@ -197,7 +197,8 @@ if [ -d $HOME/.zsh.d/zsh-autosuggestions/ ]; then
     source $HOME/.zsh.d/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ddd,bg=#333,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#dddddd,bg=#333333,underline"
+
 
 #====================================================================
 # Depending on OS
