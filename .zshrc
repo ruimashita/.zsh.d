@@ -193,12 +193,11 @@ bindkey -e
 # zsh-autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions
 #====================================================================
-# TODO: for Linux setting
-
-# for Mac
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -d $HOME/.zsh.d/zsh-autosuggestions/ ]; then
+    source $HOME/.zsh.d/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ddd,bg=#333,underline"
 
 #====================================================================
 # Depending on OS
