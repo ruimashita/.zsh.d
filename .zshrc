@@ -34,7 +34,7 @@ fi
 
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
     # brew completions
-    fpath=(/opt/homebrew/share/zsh-completions $fpath)
+    fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fi
 
 fpath=(~/.zsh.d/completions $fpath)
