@@ -1,9 +1,5 @@
 # echo 'load .zshrc'
 
-############################################################################################################################
-# my setting (before oh-my-zsh)
-############################################################################################################################
-
 #====================================================================
 # Depending on OS
 #====================================================================
@@ -27,83 +23,9 @@ if [[ $OSTYPE =~ 'darwin.*' ]]; then
 fi
 
 
-# Completion configuration
-
-# To avoid redundant cache issue for oh-my-zsh and zsh-completions, setup zsh-completions and compinit before source oh-my-zsh.
-# Ref: https://github.com/zsh-users/zsh-completions
-
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
-    # brew completions
-    fpath=($(brew --prefix)/share/zsh-completions $fpath)
-fi
-
-fpath=(~/.zsh.d/completions $fpath)
-
-autoload -U compinit
-compinit
-
 
 ############################################################################################################################
-# oh-my-zsh setting
-############################################################################################################################
-
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.zsh.d/oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-if [ $HOST = 'OZU' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'NARUSE.local' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'NARUSE' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'LM-MacBook-wakisaka.local' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'Wakisaka-Takuyas-Mac-mini-2024.local' ]; then
-    ZSH_THEME="candy"
-elif  [ $HOST = 'Wakisaka-Takuyas-MacBook-Pro-13-inch-M1-2020.local' ]; then
-    ZSH_THEME="candy"
-else
-    ZSH_THEME="ys"
-fi
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump)
-
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-
-
-############################################################################################################################
-# my setting (after oh-my-zsh)
+# my setting
 ############################################################################################################################
 
 ## ゴミ箱
@@ -201,6 +123,45 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#dddddd,bg=#333333,underline"
 
 # Ctrl+K の `kill-line` で、suggestionがclearされるようにする。
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(kill-line)
+
+
+#====================================================================
+# Completion configuration
+# Ref: https://github.com/zsh-users/zsh-completions
+#====================================================================
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+    # brew completions
+    fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fi
+
+fpath=(~/.zsh.d/completions $fpath)
+
+autoload -U compinit
+compinit
+
+
+#====================================================================
+# Startship configuration
+# 
+#====================================================================
+if [[ $OSTYPE =~ 'darwin.*' ]]; then
+case "$HOST" in
+        "OZU"|\
+        "NARUSE.local"|\
+        "Wakisaka-Takuyas-Mac-mini-2024.local"|\
+        "Wakisaka-Takuyas-MacBook-Pro-13-inch-M1-2020.local")
+    STARSHIP_PALETTE="catppuccin_macchiato"
+    ;;
+  *)
+    STARSHIP_PALETTE="gruvbox_dark"
+    ;;
+esac
+
+sed "s/^palette = \"__PALETTE__\"/palette = \"$STARSHIP_PALETTE\"/" \
+  ~/etc/dotfiles/starship.base.toml > ~/.config/starship.toml
+
+eval "$(starship init zsh)"
+
 
 #====================================================================
 # Depending on OS
