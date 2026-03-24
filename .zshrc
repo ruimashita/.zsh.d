@@ -144,24 +144,22 @@ compinit
 # Startship configuration
 # 
 #====================================================================
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
 case "$HOST" in
-        "OZU"|\
+    "OZU"|\
         "NARUSE.local"|\
         "Wakisaka-Takuyas-Mac-mini-2024.local"|\
         "Wakisaka-Takuyas-MacBook-Pro-13-inch-M1-2020.local")
-    STARSHIP_PALETTE="catppuccin_macchiato"
-    ;;
-  *)
-    STARSHIP_PALETTE="gruvbox_dark"
-    ;;
+        STARSHIP_PALETTE="catppuccin_macchiato"
+        ;;
+    *)
+        STARSHIP_PALETTE="gruvbox_dark"
+        ;;
 esac
 
 sed "s/^palette = \"__PALETTE__\"/palette = \"$STARSHIP_PALETTE\"/" \
-  ~/etc/dotfiles/starship.base.toml > ~/.config/starship.toml
+    ~/.config/starship.base.toml > ~/.config/starship.toml
 
 eval "$(starship init zsh)"
-
 
 #====================================================================
 # Depending on OS
