@@ -157,7 +157,7 @@ case "$HOST" in
 esac
 
 sed "s/^palette = \"__PALETTE__\"/palette = \"$STARSHIP_PALETTE\"/" \
-    ~/.config/starship.base.toml > ~/.config/starship.toml
+    ~/.zsh.d/starship.base.toml > ~/.config/starship.toml
 
 eval "$(starship init zsh)"
 
