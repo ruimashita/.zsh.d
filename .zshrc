@@ -51,6 +51,10 @@ select-word-style bash
 
 ## History settings
 
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=10000
+
 # share history with another zsh
 setopt share_history
 
