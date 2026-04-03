@@ -119,7 +119,15 @@ bindkey -e
 #
 #====================================================================
 source <(fzf --zsh)
-export FZF_DEFAULT_OPTS="--layout=reverse --border --info=inline"
+export FZF_DEFAULT_OPTS="
+  --layout=reverse
+  --border
+  --info=inline
+  --highlight-line
+  --pointer="◆"
+  --color=bg:#333333,fg:#cccccc,hl:#76bbff
+  --color=bg+:#000000,fg+:#ffffff,hl+:#24c8ff
+"
 
 
 #====================================================================
