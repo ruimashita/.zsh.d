@@ -118,6 +118,10 @@ bindkey -e
 # fzf
 #
 #====================================================================
+if [ -d $HOME/.fzf/ ]; then
+    # For manual install
+    export PATH=$HOME/.fzf/bin:$PATH;
+fi
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="
   --layout=reverse
