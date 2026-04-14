@@ -194,10 +194,8 @@ fi
 if [[ $OSTYPE =~ 'darwin.*' ]]; then
 
     # autojump
-    if [ -z $AUTOJUMP_INITTED ]; then
-        echo "init autojump"
-        [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-        export AUTOJUMP_INITTED=1
+    if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
+        . $(brew --prefix)/etc/profile.d/autojump.sh
     fi
 
     # byobu
