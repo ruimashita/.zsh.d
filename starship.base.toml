@@ -53,9 +53,9 @@ color_green = '#98971a'
 
 [palettes.catppuccin_macchiato]
 color_fg0 =  "#181926"
-color_bg_6 = "#ed8796"
-color_bg_5 = "#f5a97f"
-color_bg_4 = "#eed49f"
+color_bg_6 = "#f5a97f"
+color_bg_5 = "#eed49f"
+color_bg_4 = "#a6da95"
 color_bg_3 = "#91d7e3"
 color_bg_2 = "#8aadf4"
 color_bg_1 = "#c6a0f6"
