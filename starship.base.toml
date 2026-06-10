@@ -174,7 +174,7 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_bg_4)]($style)'
 [python]
 symbol = ""
 style = "bg:color_bg_4"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_bg_4)]($style)'
+format = '[[ $symbol( $version)( $virtualenv) ](fg:color_fg0 bg:color_bg_4)]($style)'
 
 [docker_context]
 symbol = ""
