@@ -1,7 +1,7 @@
 # echo 'load .zshenv'
 
 if [ ! -z $LOCAL_ZSHENV_LOADED ]; then
-    echo "load .zshenv again"
+    # echo "load .zshenv again"
     return
 fi
 
