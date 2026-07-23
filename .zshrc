@@ -147,6 +147,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#dddddd,bg=#333333,underline"
 # Ctrl+K の `kill-line` で、suggestionがclearされるようにする。
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(kill-line)
 
+# Enter で、サジェストを確定して即実行
+bindkey '^M' autosuggest-execute
 
 #====================================================================
 # Completion configuration
