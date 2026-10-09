@@ -29,14 +29,21 @@ fi
 ############################################################################################################################
 
 ## ゴミ箱
-if [ $OSTYPE = 'linux-gnu' ]; then
-    if [[ -e /usr/bin/trash-put ]]; then
-	    alias rm='trash-put'
-    fi
-fi
+# rm の引数から -r・-R・-f とその組み合わせを取り除き、trash / trash-put に渡す。
+_rm_to_trash() {
+    # 関数内だけ zsh の標準設定にし、下の ## を使うため拡張パターンを有効にする。
+    emulate -L zsh -o extendedglob
+    local trash_command=$1
+    shift
+    # :# で「- の後に r・R・f が1文字以上続く」引数を除外する（例: -r, -rf, -fr）。
+    # -- 以降も対象になるため、同名のファイルは ./-rf のように指定する。
+    command "$trash_command" "${(@)argv:#-[rRf]##}"
+}
 
-if [[ $OSTYPE =~ 'darwin.*' ]]; then
-	alias rm='trash'
+if [[ $OSTYPE == linux-gnu && -e /usr/bin/trash-put ]]; then
+    alias rm='_rm_to_trash trash-put'
+elif [[ $OSTYPE =~ 'darwin.*' ]]; then
+    alias rm='_rm_to_trash trash'
 fi
 
 ## set LS_COLORS by dircolors
