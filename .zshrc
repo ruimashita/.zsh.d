@@ -180,6 +180,7 @@ case "$HOST" in
     "OZU"|\
         "NARUSE.local"|\
         "Wakisaka-Takuyas-Mac-mini-2024.local"|\
+        "Wakisaka-Takuyas-Mac-mini-2026.local"|\
         "Wakisaka-Takuyas-MacBook-Pro-13-inch-M1-2020.local")
         STARSHIP_PALETTE="catppuccin_macchiato"
         ;;
