@@ -30,7 +30,7 @@ fi
 
 ## ゴミ箱
 # rm の引数から -r・-R・-f とその組み合わせを取り除き、trash / trash-put に渡す。
-_rm_to_trash() {
+rm_to_trash() {
     # 関数内だけ zsh の標準設定にし、下の ## を使うため拡張パターンを有効にする。
     emulate -L zsh -o extendedglob
     local trash_command=$1
@@ -41,9 +41,9 @@ _rm_to_trash() {
 }
 
 if [[ $OSTYPE == linux-gnu && -e /usr/bin/trash-put ]]; then
-    alias rm='_rm_to_trash trash-put'
+    alias rm='rm_to_trash trash-put'
 elif [[ $OSTYPE =~ 'darwin.*' ]]; then
-    alias rm='_rm_to_trash trash'
+    alias rm='rm_to_trash trash'
 fi
 
 ## set LS_COLORS by dircolors
